@@ -1,0 +1,20 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "Mario Kart 8 Randomizer",
+      "appId": "com.walkingriver.mk8r",
+      "ionicCss": true,
+      "bowerPackages": [],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "plugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-splashscreen"
+      ],
+      "appModule": "marioKart8Randomizer",
+      "ecosystems": []
+    }
+  }
+}
