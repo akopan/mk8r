@@ -16,10 +16,19 @@
   Randomize!
 </button>
     <div class="row" ng-repeat="player in vm.selections">
-      <div class="col">{{player.character.name}}</div>
-      <div class="col">{{player.kart.name}}</div>
-      <div class="col">{{player.tires.name}}</div>
-      <div class="col">{{player.wing.name}}</div>
+      <div class="col">
+        <div class="thumbnail">
+          <img width="32px" src="/main/assets/images/{{player.character.image}}" alt="{{player.character.name}}" /></div>
+        {{player.character.name}}</div>
+      <div class="col"><div class="thumbnail">
+        <img width="50px" src="/main/assets/images/{{player.kart.image}}" alt="{{player.kart.name}}" /></div>{{player.kart.name}}</div>
+      <div class="col">
+        <div class="thumbnail">
+          <img width="50px" src="/main/assets/images/{{player.tires.image}}" alt="{{player.tires.name}}" /></div>
+        {{player.tires.name}}</div>
+      <div class="col">
+        <div class="thumbnail">
+          <img width="50px" src="/main/assets/images/{{player.wing.image}}" alt="{{player.wing.name}}" /></div>{{player.wing.name}}</div>
     </div>
   </ion-content>
 </ion-view>
