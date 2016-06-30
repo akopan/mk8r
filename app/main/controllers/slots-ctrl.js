@@ -66,14 +66,6 @@ angular.module('main')
       }
     }
 
-/*
-
-
-
-
-
-
-*/
     // Static data below
     function allCharacters() {
       return [
@@ -133,7 +125,7 @@ angular.module('main')
         { name: 'Sports Coupe', image: '100px-SportsCoupeMK8.png' },
         { name: 'Gold Standard', image: '100px-Gold_Standard.png' },
         { name: 'GLA ', image: '100px-GLA-MK8.png' },
-        { name: 'W 25 Silver Arrow ', image: '100px-W25SilverArrow-MK8.png' },
+        { name: 'Silver Arrow ', image: '100px-W25SilverArrow-MK8.png' },
         { name: '300 SL Roadster', image: '100px-300SLRoadster-MK8.png' },
         { name: 'Blue Falcon', image: '100px-MK8BlueFalcon.png' },
         { name: 'Tanooki Kart', image: '100px-Tanooki-Buggy.png' },

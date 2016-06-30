@@ -1,34 +1,28 @@
 <ion-view view-title="main module">
-  <!-- do you want padding? -->
+    <ion-nav-buttons side="right">
+      <button class="button button-clear positive icon ion-cube" 
+    ng-click="vm.randomize()">
+    </button>
+    </ion-nav-buttons>
   <ion-content class="padding">
-    <label class="item item-input item-select">
-    <div class="input-label">
-      Number of Players
-    </div>
-    <select ng-model="vm.numPlayers">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </select>
-  </label>
-    <button class="button button-full button-positive" ng-click="vm.randomize()">
-  Randomize!
 </button>
-    <div class="row" ng-repeat="player in vm.selections">
-      <div class="col">
-        <div class="thumbnail">
-          <img width="32px" src="/main/assets/images/{{player.character.image}}" alt="{{player.character.name}}" /></div>
-        {{player.character.name}}</div>
-      <div class="col"><div class="thumbnail">
-        <img width="50px" src="/main/assets/images/{{player.kart.image}}" alt="{{player.kart.name}}" /></div>{{player.kart.name}}</div>
-      <div class="col">
-        <div class="thumbnail">
-          <img width="50px" src="/main/assets/images/{{player.tires.image}}" alt="{{player.tires.name}}" /></div>
-        {{player.tires.name}}</div>
-      <div class="col">
-        <div class="thumbnail">
-          <img width="50px" src="/main/assets/images/{{player.wing.image}}" alt="{{player.wing.name}}" /></div>{{player.wing.name}}</div>
+    <div class="card" ng-repeat="player in vm.selections">
+      <div class="item item-avatar">
+        <img class="character" src="/main/assets/images/{{player.character.image}}" alt="{{player.character.name}}" />
+        <h2>{{player.character.name}}</h2>
+        <div class="row">
+          <div class="col">
+            <div class="thumbnail">
+              <img width=64px " src="/main/assets/images/{{player.kart.image}} " alt="{{player.kart.name}} " /></div>{{player.kart.name}}</div>
+        <div class="col ">
+          <div class="thumbnail ">
+            <img width="64px " src="/main/assets/images/{{player.tires.image}} " alt="{{player.tires.name}} " /></div>
+          {{player.tires.name}}</div>
+        <div class="col ">
+          <div class="thumbnail ">
+            <img width="64px " src="/main/assets/images/{{player.wing.image}} " alt="{{player.wing.name}} " /></div>{{player.wing.name}}</div>
+      </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>
