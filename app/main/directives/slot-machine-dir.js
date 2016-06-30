@@ -8,7 +8,7 @@ angular.module('main')
         items: '='
       },
       replace: true,
-      link: function (scope, element, attrs) {
+      link: function (scope, element) {
         var machine = angular(element).slotMachine();
         machine.shuffle();
       }
