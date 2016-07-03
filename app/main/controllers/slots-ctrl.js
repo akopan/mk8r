@@ -56,10 +56,15 @@ angular.module('main')
 
     function randomize() {
       var i;
-      var character = Math.floor(Math.random() * vm.characters.length);
-      var kart = Math.floor(Math.random() * vm.karts.length);
-      var tire = Math.floor(Math.random() * vm.tires.length);
-      var wing = Math.floor(Math.random() * vm.wings.length);
+      // var character = Math.floor(Math.random() * vm.characters.length);
+      // var kart = Math.floor(Math.random() * vm.karts.length);
+      // var tire = Math.floor(Math.random() * vm.tires.length);
+      // var wing = Math.floor(Math.random() * vm.wings.length);
+      var r = new Random();
+      var character = r.integer(0, vm.characters.length - 1);
+      var kart = r.integer(0, vm.karts.length - 1);
+      var tire = r.integer(0, vm.tires.length - 1);
+      var wing = r.integer(0, vm.wings.length - 1);
 
       var src = './main/assets/sounds/item-box.mp3';
       var media = $cordovaMedia.newMedia(src);
