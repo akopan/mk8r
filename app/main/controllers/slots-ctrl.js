@@ -12,24 +12,28 @@ angular.module('main')
     vm.selections = [
       {
         id: 1,
+        style: 'energized',
         character: {},
         kart: {},
         tires: {},
         wing: {}
       }, {
         id: 2,
+        style: 'positive',
         character: {},
         kart: {},
         tires: {},
         wing: {}
       }, {
         id: 3,
+        style: 'assertive',
         character: {},
         kart: {},
         tires: {},
         wing: {}
       }, {
         id: 4,
+        style: 'balanced',
         character: {},
         kart: {},
         tires: {},
@@ -57,7 +61,7 @@ angular.module('main')
       var tire = Math.floor(Math.random() * vm.tires.length);
       var wing = Math.floor(Math.random() * vm.wings.length);
 
-      var src = './main/assets/sounds/mk8-item-box-jingle.mp3';
+      var src = './main/assets/sounds/item-box.mp3';
       var media = $cordovaMedia.newMedia(src);
       media.play();
 
