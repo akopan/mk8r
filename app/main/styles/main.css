@@ -1,0 +1,10 @@
+
+.slotContainer{
+  border: 5px inset #000;
+	height: 75px;
+	padding: 0;
+	overflow: hidden;
+	display: inline-block;
+	text-align: center;
+	background-color: #ffffff;
+}

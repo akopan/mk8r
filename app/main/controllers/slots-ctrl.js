@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('SlotsCtrl', function ($cordovaMedia, $interval, $log, $timeout) {
+  .controller('SlotsCtrl', function ($cordovaMedia, $interval, $log, $scope, $timeout) {
 
     $log.log('Hello from your Controller: SlotsCtrl in module main:. This is your controller:', this);
     var vm = this;
@@ -8,6 +8,8 @@ angular.module('main')
     vm.karts = [];
     vm.tires = [];
     vm.wings = [];
+    vm.charApi = [{}, {}, {}, {}];
+    vm.vehicalApi = [{}, {}, {}, {}];
     vm.numPlayers = 1;
     vm.selections = [
       {
@@ -56,15 +58,28 @@ angular.module('main')
 
     function randomize() {
       var i;
-      // var character = Math.floor(Math.random() * vm.characters.length);
-      // var kart = Math.floor(Math.random() * vm.karts.length);
-      // var tire = Math.floor(Math.random() * vm.tires.length);
-      // var wing = Math.floor(Math.random() * vm.wings.length);
       var r = new Random();
       var character = r.integer(0, vm.characters.length - 1);
       var kart = r.integer(0, vm.karts.length - 1);
       var tire = r.integer(0, vm.tires.length - 1);
       var wing = r.integer(0, vm.wings.length - 1);
+
+      vm.charApi[0].toggle();
+      vm.charApi[1].toggle();
+      vm.charApi[2].toggle();
+      vm.charApi[3].toggle();
+      vm.kartApi1.toggle();
+      vm.kartApi2.toggle();
+      vm.kartApi3.toggle();
+      vm.kartApi4.toggle();
+      vm.tireApi1.toggle();
+      vm.tireApi2.toggle();
+      vm.tireApi3.toggle();
+      vm.tireApi4.toggle();
+      vm.wingApi1.toggle();
+      vm.wingApi2.toggle();
+      vm.wingApi3.toggle();
+      vm.wingApi4.toggle();
 
       var src = './main/assets/sounds/item-box.mp3';
       var media = $cordovaMedia.newMedia(src);

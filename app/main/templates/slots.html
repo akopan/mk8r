@@ -1,30 +1,115 @@
 <ion-view view-title="main module">
-    <ion-nav-buttons side="right">
-      <button class="button button-clear positive icon ion-cube" 
-    ng-click="vm.randomize()">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear positive icon ion-cube" ng-click="vm.randomize()">
     </button>
-    </ion-nav-buttons>
+  </ion-nav-buttons>
   <ion-content>
-</button>
-<div class="list">
-    <div ng-repeat="player in vm.selections" ng-if="vm.selections[0].character.name">
-      <div class="item item-avatar">
-        <img class="character" src="./main/assets/images/{{player.character.image}}" alt="{{player.character.name}}" />
-        <h2>{{player.character.name}}</h2>
-        <div class="row">
-          <div class="col item-text-wrap centered">
-            <div class="thumbnail">
-              <img width=64px " src="./main/assets/images/{{player.kart.image}} " alt="{{player.kart.name}} " /></div>{{player.kart.name}}</div>
-        <div class="col item-text-wrap centered">
-          <div class="thumbnail ">
-            <img width="64px " src="./main/assets/images/{{player.tires.image}} " alt="{{player.tires.name}} " /></div>
-          {{player.tires.name}}</div>
-        <div class="col item-text-wrap centered">
-          <div class="thumbnail ">
-            <img width="64px " src="./main/assets/images/{{player.wing.image}} " alt="{{player.wing.name}} " /></div>{{player.wing.name}}</div>
+    </button>
+    <!--<div class="list">
+      <div ng-repeat="player in vm.selections" ng-if="vm.selections[0].character.name">
+        <div class="item item-avatar">
+          <img class="character" src="./main/assets/images/{{player.character.image}}" alt="{{player.character.name}}" />
+          <h2>{{player.character.name}}</h2>
+          <div class="row">
+            <div class="col item-text-wrap centered">
+              <div class="thumbnail">
+                <img width="64px" src="./main/assets/images/{{player.kart.image}}" alt="{{player.kart.name}}" /></div>{{player.kart.name}}</div>
+            <div class="col item-text-wrap centered">
+              <div class="thumbnail">
+                <img width="64px" src="./main/assets/images/{{player.tires.image}}" alt="{{player.tires.name}}" /></div>
+              {{player.tires.name}}</div>
+            <div class="col item-text-wrap centered">
+              <div class="thumbnail">
+                <img width="64px" src="./main/assets/images/{{player.wing.image}}" alt="{{player.wing.name}}" /></div>{{player.wing.name}}</div>
+          </div>
+        </div>
       </div>
+    </div>-->
+
+    <div>
+      <div class="row">
+        <div class="col col-33 col-offset-10 text-center">
+          <span class="badge badge-energized" ng-click="vm.charApi[0].toggle()">Player 1</span>
+          <div>
+            <mk-slot api="vm.charApi[0]" items="vm.characters" mk-class="item-avatar" />
+          </div>
+        </div>
+        <div class="col col-33 col-offset-10 text-center">
+          <span class="badge badge-positive" ng-click="vm.charApi[1].toggle()">Player 2</span>
+          <div>
+            <mk-slot api="vm.charApi[1]" items="vm.characters" mk-class="item-avatar" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-33 col-offset-10 text-center">
+          <span class="badge badge-assertive" ng-click="vm.charApi[2].toggle()">Player 3</span>
+          <div>
+            <mk-slot api="vm.charApi[2]" items="vm.characters" mk-class="item-avatar" />
+          </div>
+        </div>
+        <div class="col col-33 col-offset-10 text-center">
+          <span class="badge badge-balanced" ng-click="vm.charApi[3].toggle()">Player 4</span>
+          <div>
+            <mk-slot api="vm.charApi[3]" items="vm.characters" mk-class="item-avatar" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-25">
+            <mk-slot api="vm.kartApi1" items="vm.karts" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.kartApi2" items="vm.karts" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.kartApi3" items="vm.karts" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.kartApi4" items="vm.karts" mk-class="item-thumbnail" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">
+            <mk-slot api="vm.tireApi1" items="vm.tires" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.tireApi2" items="vm.tires" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.tireApi3" items="vm.tires" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.tireApi4" items="vm.tires" mk-class="item-thumbnail" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">
+            <mk-slot api="vm.wingApi1" items="vm.wings" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.wingApi2" items="vm.wings" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.wingApi3" items="vm.wings" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <mk-slot api="vm.wingApi4" items="vm.wings" mk-class="item-thumbnail" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25 text-center" ng-click="vm.kartApi1.toggle();vm.tireApi1.toggle();vm.wingApi1.toggle();">
+          <span class="badge badge-energized">Player 1</span></div>
+        <div class="col col-25 text-center" ng-click="vm.kartApi2.toggle();vm.tireApi2.toggle();vm.wingApi2.toggle();">
+          <span class="badge badge-positive">Player 2</span></div>
+        <div class="col col-25 text-center" ng-click="vm.kartApi3.toggle();vm.tireApi3.toggle();vm.wingApi3.toggle();">
+          <span class="badge badge-assertive">Player 3</span></div>
+        <div class="col col-25 text-center" ng-click="vm.kartApi4.toggle();vm.tireApi4.toggle();vm.wingApi4.toggle();">
+          <span class="badge badge-balanced">Player 4</span></div>
       </div>
     </div>
-</div>
+
+
   </ion-content>
 </ion-view>
