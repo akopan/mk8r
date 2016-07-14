@@ -18,15 +18,14 @@
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
+  <link rel="stylesheet" href="bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.css" />
   <!-- endbower -->
   <!-- endbuild -->
-
-  <link rel="stylesheet" href="bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.css" />
-  <link rel="stylesheet" href="main/directives/slot-machine-dir.css" />
 
   <!-- build:css main/styles/app.css -->
   <!-- inject:css -->
   <link rel="stylesheet" href="main/styles/main.css">
+  <link rel="stylesheet" href="main/styles/slot-machine-dir.css">
   <!-- endinject -->
   <!-- endbuild -->
 </head>
@@ -54,7 +53,7 @@
   <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
   <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.min.js"></script>
+  <script src="bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.js"></script>
   <script src="bower_components/random/lib/random.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
@@ -62,8 +61,10 @@
   <!-- build:js scripts/app.js -->
   <!-- inject:js -->
   <script src="main/main.js"></script>
+  <script src="main/services/mario-serv.js"></script>
   <script src="main/directives/slot-machine-dir.js"></script>
   <script src="main/controllers/slots-ctrl.js"></script>
+  <script src="main/controllers/slot-test-ctrl.js"></script>
   <script src="main/constants/config-const.js"></script>
   <script src="app.js"></script>
   <!-- endinject -->

@@ -8,7 +8,7 @@
     "ngCordova": "^0.1.26-alpha",
     "jQuery-SlotMachine": "jquery-slotmachine#^3.0.1",
     "random": "^1.0.8",
-    "jquery": "2.2"
+    "jquery": "^1.9"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.0"

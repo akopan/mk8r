@@ -22,5 +22,11 @@ angular.module('main', [
       templateUrl: 'main/templates/slots.html',
       controller: 'SlotsCtrl as vm',
       controllerAs: 'vm'
+    })
+    .state('test', {
+      url: '/test',
+      templateUrl: 'main/templates/slot-test.html',
+      controller: 'SlotTestCtrl as vm',
+      controllerAs: 'vm'
     });
 });

@@ -1,0 +1,21 @@
+<ion-view view-title="main module">
+  <!-- do you want padding? -->
+  <ion-content class="padding">
+
+    <!-- content goes here -->
+    <div class="row">
+      <div class="button-bar">
+        <button class="button button-icon icon ion-play" ng-click="vm.api.shuffle()" />
+        <button class="button button-icon icon ion-stop" ng-click="vm.api.stop()" />
+        <button class="button button-icon icon ion-arrow-up-a" ng-click="vm.api.next()" />
+        <button class="button button-icon icon ion-arrow-down-a" ng-click="vm.api.prev()" />
+        <button class="button button-icon icon ion-shuffle" ng-click="vm.api.shuffle(5)" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mk-slot api="vm.api" items="vm.characters" mk-class="item-avatar" />
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

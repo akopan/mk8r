@@ -7,7 +7,8 @@
   "globals": {
     "angular": true,
     "ionic": true,
-    "Random": true
+    "Random": true,
+    "$": true
   },
   "rules": {
     "no-console": 1
