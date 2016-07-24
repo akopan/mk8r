@@ -18,7 +18,9 @@ angular.module('main')
           prev: prev,
           next: next,
           stop: stop,
-          // active: getActive,
+          active: getActive,
+          setActive: setActive,
+          setDelay: setDelay,
           // futureActive: futureActive,
           // running: running,
           // stopping: stopping,
@@ -140,9 +142,10 @@ angular.module('main')
         }
 
         function _changeTransition() {
-          var delay = me._delay || me.settings.delay,
-            transition = me._transition || me.settings.transition;
-          me.$container.css('transition', delay + 's ' + transition);
+          var delay = me._delay || me.settings.delay;
+          var transition = me._transition || me.settings.transition;
+          scope.transition = ('transition', delay + 's ' + transition);
+          //me.$container.css('transition', delay + 's ' + transition);
         }
 
         function _animate(margin) {
@@ -218,23 +221,23 @@ angular.module('main')
             case 1:
               delay /= 0.5;
               me._transition = 'ease-out';
-              me._animationFX = FX_TURTLE;
+              setAnimationFx(FX_TURTLE);
               break;
             case 2:
               delay /= 0.75;
-              me._animationFX = FX_SLOW;
+              setAnimationFx(FX_SLOW);
               break;
             case 3:
               delay /= 1;
-              me._animationFX = FX_NORMAL;
+              setAnimationFx(FX_NORMAL);
               break;
             case 4:
               delay /= 1.25;
-              me._animationFX = FX_NORMAL;
+              setAnimationFx(FX_NORMAL);
               break;
             default:
               delay /= 1.5;
-              me._animationFX = FX_FAST;
+              setAnimationFx(FX_FAST);
           }
 
           return delay;
@@ -334,26 +337,26 @@ angular.module('main')
           // $.data(this.element[0], 'plugin_' + me.pluginName, null);
         }
 
-        function getIndex() {
+        function getActive() {
           return me._active;
         }
 
-        function setIndex(index) {
+        function setActive(index) {
           me._active = index;
           if (index < 0 || index >= me.$tiles.length) {
             me._active = 0;
           }
         }
 
-        function getVisibleTile() {
-          var firstTileHeight = me.$tiles.first().height(),
-            // Bind?
-            rawContainerMargin = me.$container.css('transform'),
-            matrixRegExp = /^matrix\(-?\d+,\s?-?\d+,\s?-?\d+,\s?-?\d+,\s?-?\d+,\s?(-?\d+)\)$/,
-            containerMargin = parseInt(rawContainerMargin.replace(matrixRegExp, '$1'), 10);
+        // function getVisibleTile() {
+        //   var firstTileHeight = me.$tiles.first().height(),
+        //     // Bind?
+        //     rawContainerMargin = me.$container.css('transform'),
+        //     matrixRegExp = /^matrix\(-?\d+,\s?-?\d+,\s?-?\d+,\s?-?\d+,\s?-?\d+,\s?(-?\d+)\)$/,
+        //     containerMargin = parseInt(rawContainerMargin.replace(matrixRegExp, '$1'), 10);
 
-          return Math.abs(Math.round(containerMargin / firstTileHeight)) - 1;
-        }
+        //   return Math.abs(Math.round(containerMargin / firstTileHeight)) - 1;
+        // }
 
         function random() {
           return Math.floor(Math.random() * me.$tiles.length);
@@ -363,7 +366,7 @@ angular.module('main')
           var choosen = void 0;
 
           if (typeof me.settings.randomize === 'function') {
-            var index = me.settings.randomize.call(me, me.active);
+            var index = me.settings.randomize.call(me, getActive);
             if (index < 0 || index >= me.$tiles.length) {
               index = 0;
             }
@@ -386,7 +389,7 @@ angular.module('main')
         }
 
         function _prevIndex() {
-          var prevIndex = me.active - 1;
+          var prevIndex = me._active - 1;
           return prevIndex < 0 ? me.$tiles.length - 1 : prevIndex;
         }
 
@@ -395,7 +398,7 @@ angular.module('main')
         }
 
         function _nextIndex() {
-          var nextIndex = me.active + 1;
+          var nextIndex = me._active + 1;
           return nextIndex < me.$tiles.length ? nextIndex : 0;
         }
 
@@ -421,7 +424,7 @@ angular.module('main')
             $elements = me.$slot.add(me.$tiles).add(me._$fakeFirstTile).add(me._$fakeLastTile);
 
           raf((function cb() {
-            me._fxClass = FX_SPEED;
+            setFxClass(FX_SPEED);
 
             if (FX_SPEED === FX_STOP) {
               $elements.removeClass(FX_GRADIENT);

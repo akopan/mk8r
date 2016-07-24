@@ -5,16 +5,35 @@
     <!-- content goes here -->
     <div class="row">
       <div class="button-bar">
-        <button class="button button-icon icon ion-play" ng-click="vm.api.shuffle()" />
+        <button class="button button-icon icon ion-play" ng-click="vm.api.start()" />
         <button class="button button-icon icon ion-stop" ng-click="vm.api.stop()" />
         <button class="button button-icon icon ion-arrow-up-a" ng-click="vm.api.next()" />
         <button class="button button-icon icon ion-arrow-down-a" ng-click="vm.api.prev()" />
-        <button class="button button-icon icon ion-shuffle" ng-click="vm.api.shuffle(5)" />
+        <button class="button button-icon icon ion-shuffle" ng-click="vm.api.spin(2000)" />
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <mk-slot api="vm.api" items="vm.characters" mk-class="item-avatar" />
+        <!--<mk-slot api="vm.api" items="vm.characters" mk-class="item-avatar" />-->
+        <slot3d api="vm.api" items="vm.characters" mk-class="item-avatar" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="item range">
+          <i class="icon ion-ios-undo"></i>
+          <input type="range" name="volume" min="0" max="{{vm.characters.length - 1}}" value="0" 
+           ng-change="vm.api.setItem(mkSlotItem)" ng-model="mkSlotItem" />
+          <i class="icon ion-ios-redo"></i>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Item #:
+        <input type="text" name="volume" min="0" max="{{vm.characters.length - 1}}" value="0"
+         ng-change="vm.api.setItem(mkSlotItem)"
+          ng-model="mkSlotItem" />
       </div>
     </div>
   </ion-content>

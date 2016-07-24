@@ -7,74 +7,72 @@
     </button>
     <div>
       <div class="row">
-        <div class="col col-33 col-offset-10 text-center">
+        <div class="col col-25 text-center">
           <span class="badge badge-energized" ng-click="vm.charApi[0].toggle()">Player 1</span>
           <div>
-            <mk-slot api="vm.charApi[0]" items="vm.characters" mk-class="item-avatar" />
+            <slot3d api="vm.charApi[0]" items="vm.characters" mk-class="item-avatar" />
           </div>
         </div>
-        <div class="col col-33 col-offset-10 text-center">
+        <div class="col col-25 text-center">
           <span class="badge badge-positive" ng-click="vm.charApi[1].toggle()">Player 2</span>
           <div>
-            <mk-slot api="vm.charApi[1]" items="vm.characters" mk-class="item-avatar" />
+            <slot3d api="vm.charApi[1]" items="vm.characters" mk-class="item-avatar" />
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col col-33 col-offset-10 text-center">
+        <div class="col col-25 text-center">
           <span class="badge badge-assertive" ng-click="vm.charApi[2].toggle()">Player 3</span>
           <div>
-            <mk-slot api="vm.charApi[2]" items="vm.characters" mk-class="item-avatar" />
+            <slot3d api="vm.charApi[2]" items="vm.characters" mk-class="item-avatar" />
           </div>
         </div>
-        <div class="col col-33 col-offset-10 text-center">
+        <div class="col col-25 text-center">
           <span class="badge badge-balanced" ng-click="vm.charApi[3].toggle()">Player 4</span>
           <div>
-            <mk-slot api="vm.charApi[3]" items="vm.characters" mk-class="item-avatar" />
+            <slot3d api="vm.charApi[3]" items="vm.characters" mk-class="item-avatar" />
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col col-25">
-            <mk-slot api="vm.kartApi1" items="vm.karts" mk-class="item-thumbnail" />
+            <slot3d api="vm.kartApi1" items="vm.karts" mk-class="item-thumbnail" />
         </div>
         <div class="col col-25">
-            <mk-slot api="vm.kartApi2" items="vm.karts" mk-class="item-thumbnail" />
+            <slot3d api="vm.kartApi2" items="vm.karts" mk-class="item-thumbnail" />
         </div>
         <div class="col col-25">
-            <mk-slot api="vm.kartApi3" items="vm.karts" mk-class="item-thumbnail" />
+            <slot3d api="vm.kartApi3" items="vm.karts" mk-class="item-thumbnail" />
         </div>
         <div class="col col-25">
-            <mk-slot api="vm.kartApi4" items="vm.karts" mk-class="item-thumbnail" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col col-25">
-            <mk-slot api="vm.tireApi1" items="vm.tires" mk-class="item-thumbnail" />
-        </div>
-        <div class="col col-25">
-            <mk-slot api="vm.tireApi2" items="vm.tires" mk-class="item-thumbnail" />
-        </div>
-        <div class="col col-25">
-            <mk-slot api="vm.tireApi3" items="vm.tires" mk-class="item-thumbnail" />
-        </div>
-        <div class="col col-25">
-            <mk-slot api="vm.tireApi4" items="vm.tires" mk-class="item-thumbnail" />
+            <slot3d api="vm.kartApi4" items="vm.karts" mk-class="item-thumbnail" />
         </div>
       </div>
       <div class="row">
         <div class="col col-25">
-            <mk-slot api="vm.wingApi1" items="vm.wings" mk-class="item-thumbnail" />
+            <slot3d api="vm.tireApi1" items="vm.tires" mk-class="item-thumbnail" />
         </div>
         <div class="col col-25">
-            <mk-slot api="vm.wingApi2" items="vm.wings" mk-class="item-thumbnail" />
+            <slot3d api="vm.tireApi2" items="vm.tires" mk-class="item-thumbnail" />
         </div>
         <div class="col col-25">
-            <mk-slot api="vm.wingApi3" items="vm.wings" mk-class="item-thumbnail" />
+            <slot3d api="vm.tireApi3" items="vm.tires" mk-class="item-thumbnail" />
         </div>
         <div class="col col-25">
-            <mk-slot api="vm.wingApi4" items="vm.wings" mk-class="item-thumbnail" />
+            <slot3d api="vm.tireApi4" items="vm.tires" mk-class="item-thumbnail" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-25">
+            <slot3d api="vm.wingApi1" items="vm.wings" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <slot3d api="vm.wingApi2" items="vm.wings" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <slot3d api="vm.wingApi3" items="vm.wings" mk-class="item-thumbnail" />
+        </div>
+        <div class="col col-25">
+            <slot3d api="vm.wingApi4" items="vm.wings" mk-class="item-thumbnail" />
         </div>
       </div>
       <div class="row">

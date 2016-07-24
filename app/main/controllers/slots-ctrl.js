@@ -56,12 +56,12 @@ angular.module('main')
     }
 
     function randomize() {
-      var i;
-      var r = new Random();
-      var character = r.integer(0, vm.characters.length - 1);
-      var kart = r.integer(0, vm.karts.length - 1);
-      var tire = r.integer(0, vm.tires.length - 1);
-      var wing = r.integer(0, vm.wings.length - 1);
+      // var i;
+      // var r = new Random();
+      // var character = r.integer(0, vm.characters.length - 1);
+      // var kart = r.integer(0, vm.karts.length - 1);
+      // var tire = r.integer(0, vm.tires.length - 1);
+      // var wing = r.integer(0, vm.wings.length - 1);
 
       toggleAllSlots();
 
@@ -69,29 +69,29 @@ angular.module('main')
       var media = $cordovaMedia.newMedia(src);
       media.play();
 
-      var promise;
+      // var promise;
 
       $timeout(function () { }, 5000)
         .then(function () {
-          $interval.cancel(promise);
-          toggleAllSlots();
+          // $interval.cancel(promise);
+          // toggleAllSlots();
           media.stop();
         });
 
-      promise = $interval(function () {
-        for (i = 0; i < 4; i++) {
-          vm.selections[i] = {
-            character: vm.characters[character],
-            kart: vm.karts[kart],
-            tires: vm.tires[tire],
-            wing: vm.wings[wing]
-          };
-          character = Math.floor(Math.random() * vm.characters.length);
-          kart = Math.floor(Math.random() * vm.karts.length);
-          tire = Math.floor(Math.random() * vm.tires.length);
-          wing = Math.floor(Math.random() * vm.wings.length);
-        }
-      }, 250, 20, true);
+    //   promise = $interval(function () {
+    //     for (i = 0; i < 4; i++) {
+    //       vm.selections[i] = {
+    //         character: vm.characters[character],
+    //         kart: vm.karts[kart],
+    //         tires: vm.tires[tire],
+    //         wing: vm.wings[wing]
+    //       };
+    //       character = Math.floor(Math.random() * vm.characters.length);
+    //       kart = Math.floor(Math.random() * vm.karts.length);
+    //       tire = Math.floor(Math.random() * vm.tires.length);
+    //       wing = Math.floor(Math.random() * vm.wings.length);
+    //     }
+    //   }, 250, 20, true);
     }
 
     function toggleAllSlots() {
