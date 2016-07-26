@@ -2,7 +2,16 @@
 angular.module('main')
   .directive('slot3d', function ($log, $timeout) {
     return {
-      templateUrl: './main/templates/mk-slot.html',
+      template: '<div> \
+          <div class="mk-slotContainer">\
+            <ul class="mk-spinner" ng-class="{\'mk-spinning\': running}" ng-style="{transform: transform}">\
+              <li ng-repeat="item in items" class="text-item-wrap text-center mk-slot-item" style="line-height:1em;">\
+                <img style="height:38px;" src="./main/assets/images/{{item.image}}"><br/>\
+                <span>{{item.name}}</span>\
+              </li>\
+            </ul>\
+          </div>\
+        </div>',
       restrict: 'E',
       scope: {
         items: '=',
