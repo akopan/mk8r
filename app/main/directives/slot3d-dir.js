@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .directive('slot3d', function ($log, $timeout, $interval) {
+  .directive('slot3d', function ($log, $timeout) {
     return {
       templateUrl: './main/templates/mk-slot.html',
       restrict: 'E',
