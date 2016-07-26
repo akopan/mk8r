@@ -10,7 +10,10 @@ angular.module('main')
     vm.tires = [];
     vm.wings = [];
     vm.charApi = [{}, {}, {}, {}];
-    vm.vehicalApi = [{}, {}, {}, {}];
+    vm.kartApi = [{}, {}, {}, {}];
+    vm.tireApi = [{}, {}, {}, {}];
+    vm.wingApi = [{}, {}, {}, {}];
+
     vm.selections = [
       {
         id: 1,
@@ -61,32 +64,9 @@ angular.module('main')
     function spin(player, duration) {
       var length = duration || 2000;
       vm.charApi[player].spin(length);
-
-      switch (player) {
-        case 0:
-          vm.kartApi0.spin(length);
-          vm.tireApi0.spin(length);
-          vm.wingApi0.spin(length);
-          break;
-
-        case 1:
-          vm.kartApi1.spin(length);
-          vm.tireApi1.spin(length);
-          vm.wingApi1.spin(length);
-          break;
-
-        case 2:
-          vm.kartApi2.spin(length);
-          vm.tireApi2.spin(length);
-          vm.wingApi2.spin(length);
-          break;
-
-        case 3:
-          vm.kartApi3.spin(length);
-          vm.tireApi3.spin(length);
-          vm.wingApi3.spin(length);
-          break;
-      }
+      vm.kartApi[player].spin(length);
+      vm.tireApi[player].spin(length);
+      vm.wingApi[player].spin(length);
     }
 
     function randomize() {
