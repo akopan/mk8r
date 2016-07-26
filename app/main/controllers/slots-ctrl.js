@@ -4,6 +4,7 @@ angular.module('main')
 
     $log.log('Hello from your Controller: SlotsCtrl in module main:. This is your controller:', this);
     var vm = this;
+    vm.sound = false;
     vm.characters = [];
     vm.karts = [];
     vm.tires = [];
@@ -43,9 +44,11 @@ angular.module('main')
     ];
 
     vm.randomize = randomize;
+    vm.spin = spin;
 
     init();
 
+    // Private functions
     function init() {
       vm.characters = MarioService.allCharacters();
       vm.karts = MarioService.allVehicals();
@@ -55,62 +58,57 @@ angular.module('main')
       mediaPolyFill();
     }
 
-    function randomize() {
-      // var i;
-      // var r = new Random();
-      // var character = r.integer(0, vm.characters.length - 1);
-      // var kart = r.integer(0, vm.karts.length - 1);
-      // var tire = r.integer(0, vm.tires.length - 1);
-      // var wing = r.integer(0, vm.wings.length - 1);
+    function spin(player, duration) {
+      var length = duration || 2000;
+      vm.charApi[player].spin(length);
 
+      switch (player) {
+        case 0:
+          vm.kartApi0.spin(length);
+          vm.tireApi0.spin(length);
+          vm.wingApi0.spin(length);
+          break;
+
+        case 1:
+          vm.kartApi1.spin(length);
+          vm.tireApi1.spin(length);
+          vm.wingApi1.spin(length);
+          break;
+
+        case 2:
+          vm.kartApi2.spin(length);
+          vm.tireApi2.spin(length);
+          vm.wingApi2.spin(length);
+          break;
+
+        case 3:
+          vm.kartApi3.spin(length);
+          vm.tireApi3.spin(length);
+          vm.wingApi3.spin(length);
+          break;
+      }
+    }
+
+    function randomize() {
       toggleAllSlots();
 
       var src = './main/assets/sounds/item-box.mp3';
       var media = $cordovaMedia.newMedia(src);
-      media.play();
+      if (vm.sound) {
+        media.play();
 
-      // var promise;
+        $timeout(function () { }, 5000)
+          .then(function () {
+            media.stop();
+          });
+      }
 
-      $timeout(function () { }, 5000)
-        .then(function () {
-          // $interval.cancel(promise);
-          // toggleAllSlots();
-          media.stop();
-        });
-
-    //   promise = $interval(function () {
-    //     for (i = 0; i < 4; i++) {
-    //       vm.selections[i] = {
-    //         character: vm.characters[character],
-    //         kart: vm.karts[kart],
-    //         tires: vm.tires[tire],
-    //         wing: vm.wings[wing]
-    //       };
-    //       character = Math.floor(Math.random() * vm.characters.length);
-    //       kart = Math.floor(Math.random() * vm.karts.length);
-    //       tire = Math.floor(Math.random() * vm.tires.length);
-    //       wing = Math.floor(Math.random() * vm.wings.length);
-    //     }
-    //   }, 250, 20, true);
-    }
-
-    function toggleAllSlots() {
-      vm.charApi[0].toggle();
-      vm.charApi[1].toggle();
-      vm.charApi[2].toggle();
-      vm.charApi[3].toggle();
-      vm.kartApi1.toggle();
-      vm.kartApi2.toggle();
-      vm.kartApi3.toggle();
-      vm.kartApi4.toggle();
-      vm.tireApi1.toggle();
-      vm.tireApi2.toggle();
-      vm.tireApi3.toggle();
-      vm.tireApi4.toggle();
-      vm.wingApi1.toggle();
-      vm.wingApi2.toggle();
-      vm.wingApi3.toggle();
-      vm.wingApi4.toggle();
+      function toggleAllSlots() {
+        spin(0, 5000);
+        spin(1, 5000);
+        spin(2, 5000);
+        spin(3, 5000);
+      }
     }
 
     // Fake Media if it doesn't exist

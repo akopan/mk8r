@@ -29,6 +29,9 @@
     </div>
     <div class="row">
       <div class="col col-25">
+        <slot3d api="vm.kartApi0" items="vm.karts" />
+      </div>
+      <div class="col col-25">
         <slot3d api="vm.kartApi1" items="vm.karts" />
       </div>
       <div class="col col-25">
@@ -37,11 +40,11 @@
       <div class="col col-25">
         <slot3d api="vm.kartApi3" items="vm.karts" />
       </div>
-      <div class="col col-25">
-        <slot3d api="vm.kartApi4" items="vm.karts" />
-      </div>
     </div>
     <div class="row">
+      <div class="col col-25">
+        <slot3d api="vm.tireApi0" items="vm.tires" />
+      </div>
       <div class="col col-25">
         <slot3d api="vm.tireApi1" items="vm.tires" />
       </div>
@@ -51,11 +54,11 @@
       <div class="col col-25">
         <slot3d api="vm.tireApi3" items="vm.tires" />
       </div>
-      <div class="col col-25">
-        <slot3d api="vm.tireApi4" items="vm.tires" />
-      </div>
     </div>
     <div class="row">
+      <div class="col col-25">
+        <slot3d api="vm.wingApi0" items="vm.wings" />
+      </div>
       <div class="col col-25">
         <slot3d api="vm.wingApi1" items="vm.wings" />
       </div>
@@ -65,18 +68,15 @@
       <div class="col col-25">
         <slot3d api="vm.wingApi3" items="vm.wings" />
       </div>
-      <div class="col col-25">
-        <slot3d api="vm.wingApi4" items="vm.wings" />
-      </div>
     </div>
     <div class="row">
-      <div class="col col-25 text-center" ng-click="vm.spin(0);vm.kartApi1.toggle();vm.tireApi1.toggle();vm.wingApi1.toggle();">
+      <div class="col col-25 text-center" ng-click="vm.spin(0)">
         <span class="badge badge-energized">Player 1</span></div>
-      <div class="col col-25 text-center" ng-click="vm.kartApi2.toggle();vm.tireApi2.toggle();vm.wingApi2.toggle();">
+      <div class="col col-25 text-center" ng-click="vm.spin(1)">
         <span class="badge badge-positive">Player 2</span></div>
-      <div class="col col-25 text-center" ng-click="vm.kartApi3.toggle();vm.tireApi3.toggle();vm.wingApi3.toggle();">
+      <div class="col col-25 text-center" ng-click="vm.spin(2)">
         <span class="badge badge-assertive">Player 3</span></div>
-      <div class="col col-25 text-center" ng-click="vm.kartApi4.toggle();vm.tireApi4.toggle();vm.wingApi4.toggle();">
+      <div class="col col-25 text-center" ng-click="vm.spin(3)">
         <span class="badge badge-balanced">Player 4</span></div>
     </div>
   </ion-content>
