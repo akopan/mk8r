@@ -2,42 +2,28 @@
 angular.module('main')
   .directive('slot3d', function ($log, $timeout) {
     return {
-      template: '<div> \
-          <div class="mk-slotContainer">\
-            <ul class="mk-spinner" ng-class="{\'mk-spinning\': running}" ng-style="{transform: transform}">\
-              <li ng-repeat="item in items" class="text-item-wrap text-center mk-slot-item" style="line-height:1em;">\
-                <img style="height:38px;" src="./main/assets/images/{{item.image}}"><br/>\
-                <span>{{item.name}}</span>\
-              </li>\
-            </ul>\
-          </div>\
-        </div>',
+      template: '<div>' +
+      '  <div class="mk-slotContainer">' +
+      '    <ul class="mk-spinner" ng-class="{\'mk-spinning\': running}" ng-style="{transform: transform}">' +
+      '      <li ng-repeat="item in items" class="text-item-wrap text-center mk-slot-item" style="line-height:1em;">' +
+      '        <img style="height:38px;" src="./main/assets/images/{{item.image}}"><br/>' +
+      '        <span>{{item.name}}</span>' +
+      '      </li>' +
+      '    </ul>' +
+      '  </div>' +
+      '</div>',
       restrict: 'E',
       scope: {
         items: '=',
-        api: '=?',
-        options: '='
+        api: '=?'
       },
-      // replace: true,
       link: function (scope, element) {
         // Public API
         scope.api = {
-          // toggle: toggleSlots,
-          // shuffle: shuffle,
           prev: prev,
           next: next,
           stop: stop,
           start: start,
-          // active: getActive,
-          // setActive: setActive,
-          // setDelay: setDelay,
-          // futureActive: futureActive,
-          // running: running,
-          // stopping: stopping,
-          // visible: visible,
-          // setRandomize: setRandomize,
-          // direction: setDirection,
-          // destroy: destroy
           setItem: setItem,
           item: item,
           spin: spin,
