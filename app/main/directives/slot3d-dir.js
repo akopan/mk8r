@@ -101,10 +101,10 @@ angular.module('main')
           var t = duration || 5000;
           var r = Math.floor(Math.random() * (wheel.itemCount - 1));
           setItem(r);
-          $timeout(function () {
+          return $timeout(function () {
             start();
             r = Math.floor(Math.random() * (wheel.itemCount - 1));
-            $timeout(function () {
+            return $timeout(function () {
               stop();
               setItem(r);
             }, t);

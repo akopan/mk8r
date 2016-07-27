@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('SlotsCtrl', function ($cordovaMedia, $interval, $log, $scope, $timeout, MarioService) {
+  .controller('SlotsCtrl', function ($cordovaMedia, $interval, $log, $q, $scope, $timeout, MarioService) {
 
     $log.log('Hello from your Controller: SlotsCtrl in module main:. This is your controller:', this);
     var vm = this;
@@ -63,10 +63,12 @@ angular.module('main')
 
     function spin(player, duration) {
       var length = duration || 2000;
-      vm.charApi[player].spin(length);
-      vm.kartApi[player].spin(length);
-      vm.tireApi[player].spin(length);
-      vm.wingApi[player].spin(length);
+      return $q.all([
+        vm.charApi[player].spin(length),
+        vm.kartApi[player].spin(length),
+        vm.tireApi[player].spin(length),
+        vm.wingApi[player].spin(length),
+      ]);
     }
 
     function randomize() {
@@ -76,18 +78,17 @@ angular.module('main')
       var media = $cordovaMedia.newMedia(src);
       if (vm.sound) {
         media.play();
-
-        $timeout(function () { }, 5000)
-          .then(function () {
-            media.stop();
-          });
       }
 
       function toggleAllSlots() {
-        spin(0, 5000);
-        spin(1, 5000);
-        spin(2, 5000);
-        spin(3, 5000);
+        $q.all([
+          spin(0, 5000),
+          spin(1, 5000),
+          spin(2, 5000),
+          spin(3, 5000)
+        ]).then(function () {
+          media.stop();
+        });
       }
     }
 
