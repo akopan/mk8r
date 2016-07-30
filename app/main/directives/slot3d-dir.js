@@ -5,9 +5,9 @@ angular.module('main')
       template: '<div>' +
       '  <div class="mk-slotContainer">' +
       '    <ul class="mk-spinner" ng-class="{\'mk-spinning\': running}" ng-style="{transform: transform}">' +
-      '      <li ng-repeat="item in items" class="text-item-wrap text-center mk-slot-item" style="line-height:1em;">' +
+      '      <li ng-repeat="item in items" ng-class="{\'mk-marquee\': item.hasOverflow}" class="text-item-wrap text-center mk-slot-item" style="line-height:1em;">' +
       '        <img style="height:38px;" src="./main/assets/images/{{item.image}}"><br/>' +
-      '        <span>{{item.name}}</span>' +
+      '        <span class="mk-label">{{item.name}}</span>' +
       '      </li>' +
       '    </ul>' +
       '  </div>' +
@@ -57,7 +57,13 @@ angular.module('main')
           for (i = 0; i < itemCount; i++) {
             // Set 3D rotation
             var rotate = 'rotateX(' + i * itemAngle + 'deg)';
-            wheel.tiles[i].style.transform = rotate + ' ' + translateZ;
+            var el = wheel.tiles[i];
+            el.style.transform = rotate + ' ' + translateZ;
+
+            if (el.scrollWidth > el.clientWidth) {
+              // el.style.width = el.scrollWidth;
+              scope.items[i].hasOverflow = true;
+            }
           }
 
           // We'll need these later
