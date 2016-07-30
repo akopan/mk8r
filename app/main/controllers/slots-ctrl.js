@@ -81,7 +81,7 @@ angular.module('main')
       }
 
       function toggleAllSlots() {
-        $q.all([
+        return $q.all([
           spin(0, 5000),
           spin(1, 5000),
           spin(2, 5000),
