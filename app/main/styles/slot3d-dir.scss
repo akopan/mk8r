@@ -28,7 +28,7 @@
   display: block;
   position: absolute;
   width: 58px;
-  height: 70px;
+  height: 80px;
   left: 10px;
   top: 10px;
   backface-visibility: hidden;
@@ -76,8 +76,10 @@
   }
 
 .mk-label {
-    white-space: nowrap;
-    -moz-only-whitespace: nowrap; 
+    white-space: wrap;
+    font-size: 11px;
+    line-height: 11px;
+    -moz-only-whitespace: wrap; 
 }
 
   .mk-marquee {
