@@ -52,8 +52,6 @@
   <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
   <script src="bower_components/random/lib/random.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/ionic-native/ionic.native.js"></script>
-  <script src="bower_components/ionic-native/ionic.native.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -69,28 +67,5 @@
   <script src="app.js"></script>
   <!-- endinject -->
   <!-- endbuild -->
-
-  <script language="javascript">
-  $(document).ready(function(){
-
-    var opts = {
-      active: 1,
-      delay:500,
-      auto: 1500
-      };
-
-    var p1c = $('#p1c').slotMachine(opts);
-    var p2c = $('#p2c').slotMachine(opts);
-    var p3c = $('#p3c').slotMachine(opts);
-    var p4c = $('#p4c').slotMachine(opts);
-
-    console.log(p1c);
-    return;
-    if (p1c.length) {p1c.shuffle();}
-    if (p2c.length) {p2c.shuffle();}
-    if (p3c.length) {p3c.shuffle();}
-    if (p4c.length) {p4c.shuffle();}
-  });
-</script>
 </body>
 </html>

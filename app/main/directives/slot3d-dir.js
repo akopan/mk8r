@@ -71,6 +71,12 @@ angular.module('main')
           wheel.item = 0;
           wheel.itemAngle = -itemAngle;
           wheel.itemCount = itemCount;
+
+          // Set the initial value to something random
+          var r = Math.floor(Math.random() * (wheel.itemCount - 1));
+          setItem(r);
+
+          scope.isInitialized = true;
         }
 
         function setItem(item) {
@@ -105,11 +111,9 @@ angular.module('main')
 
         function spin(duration) {
           var t = duration || 5000;
-          var r = Math.floor(Math.random() * (wheel.itemCount - 1));
-          setItem(r);
           return $timeout(function () {
             start();
-            r = Math.floor(Math.random() * (wheel.itemCount - 1));
+            var r = Math.floor(Math.random() * (wheel.itemCount - 1));
             return $timeout(function () {
               stop();
               setItem(r);
