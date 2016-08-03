@@ -24,3 +24,6 @@
 # IDE
 *.sublime-project
 *.sublime-workspace
+
+# APK files
+**/*.apk
