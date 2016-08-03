@@ -1,4 +1,11 @@
 {
   "name": "mk8r",
-  "app_id": "cbfb8427"
+  "app_id": "cbfb8427",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
 }
