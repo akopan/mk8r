@@ -60,10 +60,9 @@ angular.module('main')
             var el = wheel.tiles[i];
             el.style.transform = rotate + ' ' + translateZ;
 
-            if (el.scrollWidth > el.clientWidth) {
-              // el.style.width = el.scrollWidth;
-              scope.items[i].hasOverflow = true;
-            }
+            // if (el.scrollWidth > el.clientWidth) {
+            //   scope.items[i].hasOverflow = true;
+            // }
           }
 
           // We'll need these later
