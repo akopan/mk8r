@@ -1,6 +1,9 @@
 <ion-view view-title="Mario Kart 8 Randomizer">
-  <ion-nav-buttons side="right">
-    <button class="button button-clear positive icon ion-cube" ng-click="vm.randomize()">
+  <ion-nav-buttons>
+    <button class="button button-clear button-icon item-icon-left icon ion-volume-high" ng-click="vm.sound=!vm.sound" 
+    ng-class="{'button-dark':vm.sound, 'button-light':!vm.sound}">
+    </button>
+    <button class="button button-clear button-dark button-icon ion-cube" ng-click="vm.randomize()">
     </button>
   </ion-nav-buttons>
   <ion-content>
