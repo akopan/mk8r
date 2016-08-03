@@ -1,6 +1,7 @@
 'use strict';
 angular.module('main', [
   'ionic',
+  'ionic.native',
   'ui.router',
   // TODO: load other modules selected during generation
 ])

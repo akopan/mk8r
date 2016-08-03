@@ -1,10 +1,10 @@
 'use strict';
 angular.module('main')
-  .controller('SlotsCtrl', function ($cordovaMedia, $interval, $log, $q, $scope, $timeout, MarioService) {
+  .controller('SlotsCtrl', function ($interval, $log, $q, $scope, $timeout, MarioService) {
 
     $log.log('Hello from your Controller: SlotsCtrl in module main:. This is your controller:', this);
     var vm = this;
-    vm.sound = false;
+    vm.sound = true;
     vm.characters = [];
     vm.karts = [];
     vm.tires = [];
@@ -75,7 +75,7 @@ angular.module('main')
       toggleAllSlots();
 
       var src = './main/assets/sounds/item-box.mp3';
-      var media = $cordovaMedia.newMedia(src);
+      var media = new window.Media(src);
       if (vm.sound) {
         media.play();
       }
